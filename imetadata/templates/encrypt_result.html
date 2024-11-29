@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Result</title>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    
+    <!-- Link to download the encrypted image -->
+    <p><a href="{{ encrypted_image_path }}" download>Download the Encrypted Image</a></p>
+
+    <!-- Link to download the AES key -->
+    <p><a href="{{ aes_key_path }}" download>Download the AES Key for Decryption</a></p>
+
+    <!-- Link to download the private key -->
+    <p><a href="{{ private_key_path }}" download>Download the Private Key for Decryption</a></p>
+
+    <!-- Link to go to Decrypt Page -->
+    <p><a href="{% url 'decrypt' %}">Go to Decrypt Page</a></p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypted Metadata</title>
+</head>
+<body>
+    <h1>Decryption Successful!</h1>
+    
+    <h2>Decrypted Metadata:</h2>
+    <pre>{{ metadata }}</pre>
+
+    <h3>Decrypted Image:</h3>
+    <p><a href="{{ decrypted_image_url }}" download>Download Decrypted Image</a></p>
+
+    <h3><a href="{% url 'encrypt' %}">Go back to Encrypt Page</a></h3>
+</body>
+</html>
+
