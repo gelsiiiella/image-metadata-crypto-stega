@@ -22,7 +22,7 @@ def generate_rsa_keys(bits=2048):
     q = number.getPrime(bits // 2)
     n = p * q
     phi = (p - 1) * (q - 1)
-    e = 65537  # Common public exponent
+    e = 65537 
     d = pow(e, -1, phi)
     return {"public": (e, n), "private": (d, n)}
 
@@ -32,7 +32,7 @@ def embed_metadata_2lsb(image_array, encrypted_data):
     index = 0
     for i in range(image_array.shape[0]):
         for j in range(image_array.shape[1]):
-            for k in range(3):  # RGB channels
+            for k in range(3):  
                 if index < len(data_bits):
                     image_array[i, j, k] = (image_array[i, j, k] & 0xFC) | (int(data_bits[index]) << 1) | (int(data_bits[index + 1]) if index + 1 < len(data_bits) else 0)
                     index += 2
@@ -43,7 +43,7 @@ def extract_metadata_2lsb(image_array, length):
     bits = []
     for i in range(image_array.shape[0]):
         for j in range(image_array.shape[1]):
-            for k in range(3):  # RGB channels
+            for k in range(3):  
                 bits.append((image_array[i, j, k] >> 1) & 1)
                 bits.append(image_array[i, j, k] & 1)
                 if len(bits) >= length * 8:
